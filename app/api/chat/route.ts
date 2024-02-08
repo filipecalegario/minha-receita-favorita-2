@@ -28,7 +28,7 @@ export async function POST(req: Request) {
 
   const res = await openai.chat.completions.create({
     model: 'gpt-3.5-turbo',
-    messages,
+    messages: [{"role": "user", "content": "Quem foi o primeiro presidente do Brasil?"}],
     temperature: 0.7,
     stream: true
   })

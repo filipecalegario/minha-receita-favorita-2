@@ -28,7 +28,7 @@ export async function POST(req: Request) {
 
   const res = await openai.chat.completions.create({
     model: 'gpt-3.5-turbo',
-    messages: [{"role": "user", "content": "Quem foi o primeiro presidente do Brasil?"}],
+    messages: [{"role": "system", "content": "Você é um excelente assistente de cozinha. Vou lhe passar um conjunto de ingredientes que estão na minha geladeira. Quero que você me dê a melhor opção de receita para ter o maior proveito dos ingredientes. Considere as quantidades com atenção. Considere que a porção básica é para duas pessoas. Formate a saída como uma receita padrão. Você não deve considerar que tenho outros ingredientes além dos supracitados. Você não precisa usar todos os ingredientes da lista. A lista de ingredientes segue abaixo."}, ...messages],
     temperature: 0.7,
     stream: true
   })
